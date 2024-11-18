@@ -2,7 +2,8 @@
 
 :root {
   --white: #fff;
-  --black: #191a23;
+  --black: #000;
+  --dark: #191a23;
   --lime: #b9ff66;
   --gray: #f3f3f3;
 
@@ -97,6 +98,34 @@ nav {
         padding: 20px 35px;
         border-radius: 14px;
         border: 1px solid var(--black);
+      }
+    }
+  }
+}
+
+.banner {
+  .banner-wrapper {
+    padding: 70px 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: strat;
+
+    .banner-info {
+      p {
+        padding: 35px 0;
+      }
+
+      .banner-btn {
+        display: flex;
+        width: 264px;
+        height: 68px;
+        color: var(--white);
+        background-color: var(--dark);
+        border-radius: 14px;
+        text-decoration: none;
+        justify-content: center;
+        align-items: center;
       }
     }
   }
