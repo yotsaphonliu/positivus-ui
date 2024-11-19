@@ -56,6 +56,25 @@
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 100px;
+
+  .section-card {
+    margin-top: 140px;
+
+    .container-header {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+
+      h2 {
+        padding: 0 7px;
+        background-color: var(--lime);
+      }
+
+      p {
+        width: 580px;
+      }
+    }
+  }
 }
 
 nav {
@@ -153,16 +172,6 @@ nav {
 .services {
   margin: 140px 0;
 
-  .container-header {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-
-    p {
-      width: 580px;
-    }
-  }
-
   .services-grid {
     padding: 80px 0;
     display: grid;
@@ -199,7 +208,7 @@ nav {
           justify-content: start;
           align-items: center;
 
-          gap: 10px;
+          gap: 15px;
           font-size: 20px;
 
           .arrow-icon {
@@ -281,9 +290,9 @@ nav {
   }
 }
 
-.quote {
+.cta {
   padding: 24px 0;
-  .quote-wrapper {
+  .cta-wrapper {
     height: 347px;
 
     border: 1px solid var(--black);
@@ -295,13 +304,13 @@ nav {
     display: flex;
     justify-content: space-between;
 
-    .quote-info {
+    .cta-info {
       width: 500px;
       p {
         padding: 26px 0;
       }
 
-      .quote-btn {
+      .cta-btn {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -321,12 +330,66 @@ nav {
       }
     }
 
-    .quote-img {
+    .cta-img {
       height: 100%;
       overflow: visible;
       display: flex;
       justify-content: center;
       align-items: center;
+    }
+  }
+}
+
+.case-studies {
+  .case-studies-grid {
+    --var-gap: 64px;
+
+    margin-top: 80px;
+    background-color: var(--black);
+    border-radius: 45px;
+    padding: 70px 60px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--var-gap);
+
+    .case-studies-item {
+      position: relative;
+
+      p {
+        color: var(--white);
+        padding-bottom: 20px;
+      }
+
+      button {
+        border: 0;
+        background: none;
+
+        display: flex;
+        justify-content: start;
+        align-items: center;
+
+        gap: 15px;
+        font-size: 20px;
+
+        .learn-more-text {
+          color: var(--lime);
+        }
+
+        svg {
+          fill: var(--lime);
+        }
+      }
+    }
+
+    .case-studies-item:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: calc(var(--var-gap) / 2 * -1);
+      bottom: 0;
+      width: 1px; /* Separator thickness */
+      background-color: var(--gray); /* Separator color */
     }
   }
 }
