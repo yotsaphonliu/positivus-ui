@@ -136,3 +136,15 @@ nav {
     }
   }
 }
+
+.logo-types {
+  .logo-types-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    img {
+      filter: grayscale(100%);
+    }
+  }
+}
