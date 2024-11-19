@@ -118,14 +118,20 @@ nav {
 
       .banner-btn {
         display: flex;
-        width: 264px;
-        height: 68px;
-        color: var(--white);
-        background-color: var(--dark);
-        border-radius: 14px;
-        text-decoration: none;
         justify-content: center;
         align-items: center;
+
+        background-color: var(--dark);
+
+        border-radius: 14px;
+
+        a {
+          padding: 20px 35px;
+          width: 100%;
+          height: 100%;
+          text-decoration: none;
+          color: var(--white);
+        }
       }
     }
   }
