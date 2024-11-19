@@ -324,9 +324,9 @@ nav {
     .quote-img {
       height: 100%;
       overflow: visible;
-
-      img {
-      }
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 }
