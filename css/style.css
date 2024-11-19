@@ -129,6 +129,7 @@ nav {
           padding: 20px 35px;
           width: 100%;
           height: 100%;
+          font-size: 20px;
           text-decoration: none;
           color: var(--white);
         }
@@ -275,6 +276,56 @@ nav {
         .learn-more-text {
           color: var(--white);
         }
+      }
+    }
+  }
+}
+
+.quote {
+  padding: 24px 0;
+  .quote-wrapper {
+    height: 347px;
+
+    border: 1px solid var(--black);
+    border-radius: 45px;
+    background-color: var(--gray);
+
+    padding: 60px;
+
+    display: flex;
+    justify-content: space-between;
+
+    .quote-info {
+      width: 500px;
+      p {
+        padding: 26px 0;
+      }
+
+      .quote-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background-color: var(--dark);
+
+        border-radius: 14px;
+
+        a {
+          padding: 20px 35px;
+          width: 100%;
+          height: 100%;
+          font-size: 20px;
+          text-decoration: none;
+          color: var(--white);
+        }
+      }
+    }
+
+    .quote-img {
+      height: 100%;
+      overflow: visible;
+
+      img {
       }
     }
   }
