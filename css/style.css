@@ -460,10 +460,11 @@ nav {
       }
 
       p {
+        transform: translateY(-20px);
         height: 0;
         overflow: hidden;
         opacity: 0;
-        transition: height 10s ease, opacity 0.7s ease;
+        transition: 0.7s ease;
         padding: 0;
       }
     }
@@ -488,6 +489,7 @@ nav {
       }
 
       p {
+        transform: translateY(0);
         height: auto; /* Adjust to a value large enough for your content */
         opacity: 1;
         padding: 30px 0; /* Restore padding when expanded */
