@@ -497,3 +497,102 @@ nav {
     }
   }
 }
+
+.team {
+  .team-grid {
+    padding-top: 80px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+
+    .team-item {
+      padding: 40px 35px;
+      border: 1px solid var(--black);
+      border-radius: 45px;
+
+      --var-item-gap: 56px;
+      display: flex;
+      flex-direction: column;
+      gap: var(--var-item-gap);
+
+      .person-title {
+        position: relative;
+        display: flex;
+        gap: 20px;
+
+        .flower-container {
+          -webkit-mask: url("/public/mask/Positivus\ Landing\ Page\ Design\ Vector.svg")
+            no-repeat center/contain;
+          mask: url("/public/mask/Positivus\ Landing\ Page\ Design\ Vector.svg")
+            no-repeat center/contain;
+          overflow: hidden;
+          /* box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); Shadow around the shape */
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+
+        .person-info {
+          align-self: flex-end;
+        }
+
+        .person-linkedin {
+          position: absolute;
+          right: 0;
+          top: 0;
+          background-color: var(--dark);
+          border-radius: 100%;
+          width: 34px;
+          height: 34px;
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          svg {
+            fill: var(--lime);
+          }
+        }
+      }
+
+      .person-title:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: calc(var(--var-item-gap) / 2 * -1);
+        height: 1px; /* Separator thickness */
+        background-color: var(--black); /* Separator color */
+      }
+    }
+  }
+
+  .all-team-btn {
+    padding-top: 40px;
+
+    display: flex;
+    justify-content: end;
+    align-items: center;
+
+    a {
+      width: 270px;
+      height: 68px;
+      background-color: var(--dark);
+      color: var(--white);
+      padding: 20px 35px;
+      border-radius: 14px;
+      border: 0px;
+      font-size: 20px;
+      text-decoration: none;
+
+      text-align: center;
+    }
+  }
+}
