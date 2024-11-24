@@ -596,7 +596,7 @@ nav {
 .testimonial {
   .testimonial-slider {
     margin-top: 80px;
-    padding: 84px 0;
+    padding: 70px 0;
     background-color: var(--dark);
     border-radius: 45px;
 
@@ -604,90 +604,109 @@ nav {
     flex-direction: column;
     align-items: center;
     gap: 124px;
+  }
+}
 
-    /* overflow: hidden; */
+.swiper-pagination {
+  position: static;
+}
 
-    .testimonials-list {
+.swiper-pagination-bullet {
+  background-color: transparent;
+  border-radius: 0;
+  height: 14px;
+  width: 14px;
+  fill: var(--white);
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  fill: var(--lime);
+}
+
+.left-arrow,
+.right-arrow {
+  text-align: center;
+  transition: 0.3s opacity;
+  transform: translate3d(0, 0, 0);
+  z-index: 20;
+  transition: background-color 0.3s ease;
+
+  bottom: 8px;
+
+  display: flex;
+
+  svg {
+    fill: var(--white);
+  }
+}
+
+.right-arrow {
+  position: static;
+  rotate: 180deg;
+  right: 120px;
+  bottom: 8px;
+  top: var(--swiper-pagination-top, auto);
+}
+
+.left-arrow {
+  position: static;
+  left: 120px;
+  bottom: 8px;
+  top: var(--swiper-pagination-top, auto);
+}
+
+.swiper-navigation {
+  width: 564px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 190px;
+}
+
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  width: auto;
+}
+
+.swiper {
+  margin-top: 80px;
+  padding: 84px 0;
+  background-color: var(--dark);
+  border-radius: 45px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 124px;
+
+  .swiper-wrapper {
+    display: flex;
+
+    .swiper-slide {
       display: flex;
-      gap: 50px;
-
-      scrollbar-width: auto;
-
-      .testimonial-item {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        .bubble {
-          width: 606px;
-          height: 266px;
-
-          background: url("/public/icons/svg/Bubble.svg") no-repeat center
-            center;
-          padding: 50px;
-
-          p {
-            width: 502px;
-            color: var(--white);
-          }
-        }
-
-        .testimonial-person {
-          padding-left: 80px;
-          h4 {
-            color: var(--lime);
-          }
-
-          p {
-            color: var(--white);
-          }
-        }
-      }
-      .testimonial-item.active {
-      }
-    }
-
-    .testimonial-slider-nav {
-      width: 564px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      flex-direction: column;
       gap: 20px;
+      .bubble {
+        width: 606px;
+        height: 266px;
 
-      button {
-        border: 0;
-        background: none;
+        background: url("/public/icons/svg/Bubble.svg") no-repeat center center;
+        padding: 50px;
 
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        transition: background-color 0.3s ease;
-
-        svg {
-          fill: var(--white);
-          fill-opacity: 0.3;
-
-          &.active {
-            fill: var(--white);
-            fill-opacity: 1;
-          }
+        p {
+          width: 502px;
+          color: var(--white);
         }
       }
 
-      .right-arrow {
-        rotate: 180deg;
-      }
+      .testimonial-person {
+        padding-left: 80px;
+        h4 {
+          color: var(--lime);
+        }
 
-      .dots {
-        display: flex;
-        gap: 20px;
-
-        svg {
-          fill: var(--white);
-
-          &.active {
-            fill: var(--lime);
-          }
+        p {
+          color: var(--white);
         }
       }
     }
