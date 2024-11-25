@@ -909,7 +909,7 @@
               <p>Connect with Us: Let's Discuss Your Digital Marketing Needs</p>
             </div>
             <div class="contact-form">
-              <form action="post">
+              <form action="/" autocomplete="on" id="contact-form">
                 <div class="radio-group">
                   <label>
                     <div>
@@ -951,6 +951,7 @@
                       id="email"
                       name="email"
                       placeholder="Email"
+                      autocomplete="email"
                       required
                     />
                   </div>
@@ -1026,13 +1027,19 @@
                 </p>
               </div>
             </div>
-            <form action="" method="post" class="subscribe-form">
+            <form
+              action=""
+              class="subscribe-form"
+              id="subscribe-form"
+              autocomplete="on"
+            >
               <div class="text-group">
                 <input
                   type="email"
                   id="email"
                   name="email"
                   placeholder="Email"
+                  autocomplete="email"
                   required
                 />
               </div>

@@ -22,3 +22,28 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+const subscribeForm = document.getElementById("subscribe-form");
+const contacteForm = document.getElementById("contact-form");
+
+// Add a submit event listener
+subscribeForm.addEventListener("submit", function (event) {
+  event.preventDefault(); // Prevent the default form submission behavior
+  console.log("Form submitted!"); // Handle your form logic here
+  const formData = new FormData(subscribeForm); // Get form data
+  console.log("Email:", formData.get("email"));
+});
+
+contacteForm.addEventListener("submit", function (event) {
+  event.preventDefault(); // Prevent the default form submission behavior
+  console.log("Form submitted!"); // Handle your form logic here
+  const formData = new FormData(contacteForm); // Get form data
+  const data = Object.fromEntries(formData.entries());
+
+  // Display all form data
+  console.log("Form Data:", data);
+
+  // If you need a JSON string
+  const jsonData = JSON.stringify(data);
+  console.log("JSON Data:", jsonData);
+});
