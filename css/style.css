@@ -780,6 +780,10 @@ nav {
           textarea {
             min-height: 190px;
           }
+
+          .required::after {
+            content: "*";
+          }
         }
       }
 
