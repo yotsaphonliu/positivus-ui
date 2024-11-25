@@ -593,84 +593,11 @@ nav {
   }
 }
 
-.testimonial {
-  .testimonial-slider {
-    margin-top: 80px;
-    padding: 70px 0;
-    background-color: var(--dark);
-    border-radius: 45px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 124px;
-  }
-}
-
-.swiper-pagination {
-  position: static;
-}
-
-.swiper-pagination-bullet {
-  background-color: transparent;
-  border-radius: 0;
-  height: 14px;
-  width: 14px;
-  fill: var(--white);
-  opacity: 1;
-}
-
-.swiper-pagination-bullet-active {
-  fill: var(--lime);
-}
-
-.left-arrow,
-.right-arrow {
-  text-align: center;
-  transition: 0.3s opacity;
-  transform: translate3d(0, 0, 0);
-  z-index: 20;
-  transition: background-color 0.3s ease;
-
-  bottom: 8px;
-
-  display: flex;
-
-  svg {
-    fill: var(--white);
-  }
-}
-
-.right-arrow {
-  position: static;
-  rotate: 180deg;
-  right: 120px;
-  bottom: 8px;
-  top: var(--swiper-pagination-top, auto);
-}
-
-.left-arrow {
-  position: static;
-  left: 120px;
-  bottom: 8px;
-  top: var(--swiper-pagination-top, auto);
-}
-
-.swiper-navigation {
-  width: 564px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 190px;
-}
-
-.swiper-pagination-bullets.swiper-pagination-horizontal {
-  width: auto;
-}
+/*.testimonial */
 
 .swiper {
   margin-top: 80px;
-  padding: 84px 0;
+  padding: 70px 0;
   background-color: var(--dark);
   border-radius: 45px;
 
@@ -709,6 +636,165 @@ nav {
           color: var(--white);
         }
       }
+    }
+  }
+}
+
+.swiper-pagination {
+  position: static;
+}
+
+.swiper-pagination-bullet {
+  background-color: transparent;
+  border-radius: 0;
+  height: 14px;
+  width: 14px;
+  fill: var(--white);
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  fill: var(--lime);
+}
+
+.left-arrow,
+.right-arrow {
+  position: static;
+  transition: 0.3s opacity;
+  transform: translate3d(0, 0, 0);
+  transition: background-color 0.3s ease;
+
+  bottom: 8px;
+
+  display: flex;
+
+  svg {
+    fill: var(--white);
+  }
+}
+
+.right-arrow {
+  rotate: 180deg;
+}
+
+.swiper-navigation {
+  width: 564px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 190px;
+}
+
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  width: auto;
+}
+
+.contact-us {
+  .contact-form {
+    margin-top: 80px;
+    padding: 60px 100px 80px;
+    background-color: var(--gray);
+    border-radius: 45px;
+
+    position: relative;
+
+    /* display: flex;
+    justify-content: space-between; */
+
+    form {
+      /* max-width: 556px; */
+      width: 556px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+
+      .radio-group {
+        display: flex;
+        gap: 50px;
+
+        label {
+          display: flex;
+          align-items: center;
+          gap: 14px;
+          font-size: 16px;
+
+          div {
+            width: 28px;
+            height: 28px;
+
+            border: 1px solid var(--black);
+            background-color: var(--white);
+            border-radius: 100%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            input[type="radio"] {
+              width: 16px;
+              height: 16px;
+              appearance: none;
+              border-radius: 100%;
+              transition: 0.2s;
+            }
+
+            input[type="radio"]:checked {
+              background-color: var(--lime);
+            }
+          }
+        }
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+
+        .text-group {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+          label {
+            font-size: 16px;
+          }
+          input[type="text"],
+          input[type="email"],
+          textarea {
+            padding: 18px 30px;
+            border: 1px solid var(--black);
+            border-radius: 14px;
+            background-color: var(--white);
+            min-width: 100%;
+            font-size: 18px;
+            min-height: 60px;
+          }
+
+          textarea {
+            min-height: 190px;
+          }
+        }
+      }
+
+      .submit-button {
+        padding: 20px 35px;
+        height: 68px;
+        background-color: var(--black);
+        border-radius: 14px;
+        color: var(--white);
+        font-size: 20px;
+        text-align: center;
+      }
+    }
+
+    .form-decoration {
+      height: 100%;
+      position: absolute;
+      right: -324px;
+      top: 0;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 }
