@@ -7,6 +7,9 @@
   --lime: #b9ff66;
   --gray: #f3f3f3;
 
+  --red: red;
+  --orange: orange;
+
   --h1-font-size: 60px;
   --h2-font-size: 40px;
   --h3-font-size: 30px;
@@ -969,5 +972,85 @@ footer {
         text-decoration: underline;
       }
     }
+  }
+}
+
+.toast-notification {
+  position: fixed;
+  width: 100%;
+
+  z-index: 100;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  left: 0;
+  bottom: 20px;
+
+  .toast {
+    position: relative;
+    height: 80px;
+    width: 250px;
+    padding: 10px 35px;
+
+    background-color: var(--white);
+
+    border: 2px solid var(--black);
+    border-radius: 14px;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    animation: show 0.3s ease 1 forwards;
+
+    svg {
+      width: 37px;
+      height: 37px;
+    }
+
+    .success {
+      fill: var(--lime);
+    }
+
+    .error {
+      fill: var(--red);
+    }
+
+    .warning {
+      fill: var(--orange);
+    }
+
+    #toast-content {
+      font-size: 18px;
+    }
+  }
+
+  .toast.hide {
+    animation: timeOut 0.5s ease forwards; /* Add the hide animation */
+  }
+}
+
+@keyframes timeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
