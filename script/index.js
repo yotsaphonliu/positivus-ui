@@ -59,6 +59,9 @@ function validation(el, type) {
   el.addEventListener("invalid", function (e) {
     el.setCustomValidity(" ");
 
+    el.style.border = "1px solid red";
+    el.style.backgroundColor = "rgba(255, 0, 0, 0.1)"; // Red background with 40% opacity
+
     let err_message;
     switch (type) {
       case email_type:
@@ -89,7 +92,29 @@ function validation(el, type) {
 
   // reset
   el.addEventListener("input", function (e) {
+    el.style.border = "";
+    el.style.backgroundColor = "";
     el.setCustomValidity("");
+  });
+}
+
+function submitForm(el, success_message) {
+  el.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    console.log("Form submitted!"); // Handle your form logic here
+    const formData = new FormData(el); // Get form data
+    const data = Object.fromEntries(formData.entries());
+
+    // Display all form data
+    console.log("Form Data:", data);
+
+    // If you need a JSON string
+    const jsonData = JSON.stringify(data);
+    console.log("JSON Data:", jsonData);
+
+    // Call the toast function for success
+    createToast(success, `${success_message}`);
   });
 }
 
@@ -97,32 +122,8 @@ validation(subscribeForm.email, email_type);
 validation(contacteForm.email, email_type);
 validation(contacteForm.message, text_type);
 
-subscribeForm.addEventListener("submit", function (event) {
-  event.preventDefault();
-
-  const formData = new FormData(subscribeForm);
-  console.log("Form submitted!");
-  console.log("Email:", formData.get("email"));
-
-  // Call the toast function for success
-  createToast(success, "Subscribe Success!");
-});
-
-contacteForm.addEventListener("submit", function (event) {
-  event.preventDefault(); // Prevent the default form submission behavior
-  console.log("Form submitted!"); // Handle your form logic here
-  const formData = new FormData(contacteForm); // Get form data
-  const data = Object.fromEntries(formData.entries());
-
-  // Display all form data
-  console.log("Form Data:", data);
-
-  // If you need a JSON string
-  const jsonData = JSON.stringify(data);
-  console.log("JSON Data:", jsonData);
-
-  createToast(success, "Message Sent!");
-});
+submitForm(subscribeForm, "Subscribe Success!");
+submitForm(contacteForm, "Message Sent!");
 
 document.addEventListener("DOMContentLoaded", () => {
   const cardsContainer = document.querySelector(".our-working-process-grid");
