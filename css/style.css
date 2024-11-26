@@ -991,9 +991,10 @@ footer {
   bottom: 20px;
 
   .toast {
+    z-index: 100;
     position: relative;
     height: 80px;
-    width: 250px;
+    width: 350px;
     padding: 10px 35px;
 
     background-color: var(--white);

@@ -7,6 +7,9 @@ const contacteForm = document.getElementById("contact-form");
 
 const notification = document.querySelector(".toast-notification");
 
+const email_type = "email";
+const text_type = "text";
+
 function createToast(type, message) {
   let newToast = document.createElement("div");
   newToast.classList.add("toast");
@@ -49,14 +52,55 @@ function createToast(type, message) {
   newToast.timeOut = setTimeout(() => {
     newToast.classList.add("hide");
     newToast.addEventListener("animationend", () => newToast.remove());
-  }, 30000);
+  }, 3000);
 }
 
-subscribeForm.addEventListener("submit", function (event) {
-  event.preventDefault(); // Prevent the default form submission behavior
+function validation(el, type) {
+  el.addEventListener("invalid", function (e) {
+    el.setCustomValidity(" ");
 
-  // If valid, get form data and proceed with your logic
-  const formData = new FormData(subscribeForm); // Get form data
+    let err_message;
+    switch (type) {
+      case email_type:
+        const emailValue = el.value.trim(); // Get the trimmed email value
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Regex to validate email format
+
+        if (!emailValue) {
+          // Check if the email field is empty
+          err_message = "Email is Required Field";
+        } else if (!emailRegex.test(emailValue)) {
+          // Check if the email format is invalid
+          err_message = "Invalid Email Format";
+        }
+
+        createToast(warning, `${err_message}`);
+        break;
+      case text_type:
+        const textValue = el.value.trim(); // Get the trimmed email value
+        if (!textValue) {
+          // Check if the email field is empty
+          err_message = `${el.name} is Required Field`;
+        }
+        createToast(warning, `${err_message}`);
+      default:
+        break;
+    }
+  });
+
+  // reset
+  el.addEventListener("input", function (e) {
+    el.setCustomValidity("");
+  });
+}
+
+validation(subscribeForm.email, email_type);
+validation(contacteForm.email, email_type);
+validation(contacteForm.message, text_type);
+
+subscribeForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  const formData = new FormData(subscribeForm);
   console.log("Form submitted!");
   console.log("Email:", formData.get("email"));
 
@@ -103,19 +147,4 @@ document.addEventListener("DOMContentLoaded", () => {
       //     : "Open";
     }
   });
-});
-
-let email = document.getElementById("email");
-
-email.addEventListener("input", function () {
-  email.setCustomValidity(""); // Reset custom validity
-});
-
-email.addEventListener("invalid", function (e) {
-  email.setCustomValidity("");
-  if (email.value === "") {
-    createToast(warning, "Please enter your email address.");
-  } else {
-    createToast(error, "Please enter a valid email address.");
-  }
 });
