@@ -977,7 +977,6 @@ footer {
 
 .toast-notification {
   position: fixed;
-  width: 100%;
 
   z-index: 100;
 
@@ -987,7 +986,8 @@ footer {
   align-items: center;
   gap: 10px;
 
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   bottom: 20px;
 
   .toast {

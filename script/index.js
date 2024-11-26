@@ -52,7 +52,7 @@ function createToast(type, message) {
   newToast.timeOut = setTimeout(() => {
     newToast.classList.add("hide");
     newToast.addEventListener("animationend", () => newToast.remove());
-  }, 3000);
+  }, 2000);
 }
 
 function validation(el, type) {
