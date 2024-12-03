@@ -227,11 +227,15 @@ nav {
 
     display: flex;
     justify-content: center;
-    align-items: strat;
+    align-items: center;
 
     .banner-info {
       p {
         padding: 35px 0;
+      }
+
+      .banner-img {
+        display: none;
       }
 
       .banner-btn {
@@ -253,6 +257,58 @@ nav {
         }
       }
     }
+
+    .banner-img {
+      width: 100%;
+      img {
+        max-width: 100%; /* Ensures the image scales down to fit its container */
+        min-width: 450px;
+        height: auto; /* Maintains the aspect ratio */
+        display: block;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1158px) {
+    .banner-wrapper {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .banner-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        h1,
+        p {
+          text-align: center;
+        }
+
+        p {
+          padding: 0 40px;
+        }
+
+        .banner-img {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          img {
+            max-width: 650px;
+          }
+        }
+
+        .banner-btn {
+          margin-top: 40px;
+        }
+      }
+
+      .banner-img {
+        display: none;
+      }
+    }
   }
 }
 
@@ -261,9 +317,49 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 
     img {
       filter: grayscale(100%);
+    }
+  }
+
+  .logo-types-mobile-carousel {
+    display: none;
+    overflow: hidden;
+  }
+
+  @media screen and (max-width: 965px) {
+    .logo-types-wrapper {
+      display: none;
+    }
+
+    .logo-types-mobile-carousel {
+      display: block;
+      .carousel-track {
+        .swiper {
+          background-color: transparent;
+          padding: 0;
+          margin-top: 0;
+          border-radius: 0%;
+
+          .swiper-wrapper {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            .swiper-slide {
+              img {
+                width: auto;
+                height: auto;
+                max-width: 100%;
+                max-height: 100%;
+                filter: grayscale(100%);
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
