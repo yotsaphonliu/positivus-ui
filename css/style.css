@@ -314,13 +314,29 @@ nav {
 
 .logo-types {
   .logo-types-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+    width: 100%;
 
-    img {
-      filter: grayscale(100%);
+    .swiper {
+      background-color: transparent;
+      padding: 0;
+      margin-top: 0;
+      border-radius: 0%;
+
+      .swiper-wrapper {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        .swiper-slide {
+          img {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+            filter: grayscale(100%);
+          }
+        }
+      }
     }
   }
 

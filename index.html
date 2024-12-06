@@ -103,12 +103,46 @@
     <section class="logo-types">
       <div class="container">
         <div class="logo-types-wrapper">
-          <img src="/public/logo/amazon.png" alt="amazon" />
-          <img src="/public/logo/dribbble.png" alt="dribbble" />
-          <img src="/public/logo/hubspot.png" alt="hubspot" />
-          <img src="/public/logo/notion.png" alt="notion" />
-          <img src="/public/logo/netflix.png" alt="netflix" />
-          <img src="/public/logo/zoom.png" alt="zoom" />
+          <div class="swiper laptop-logo-swipe">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="/public/logo/amazon.png" alt="amazon" />
+              </div>
+              <div class="swiper-slide">
+                <img src="/public/logo/dribbble.png" alt="dribbble" />
+              </div>
+              <div class="swiper-slide">
+                <img src="/public/logo/hubspot.png" alt="hubspot" />
+              </div>
+              <div class="swiper-slide">
+                <img src="/public/logo/notion.png" alt="notion" />
+              </div>
+              <div class="swiper-slide">
+                <img src="/public/logo/netflix.png" alt="netflix" />
+              </div>
+              <div class="swiper-slide">
+                <img src="/public/logo/zoom.png" alt="zoom" />
+              </div>
+              <div class="swiper-slide">
+                <img src="/public/logo/amazon.png" alt="amazon" />
+              </div>
+              <div class="swiper-slide">
+                <img src="/public/logo/dribbble.png" alt="dribbble" />
+              </div>
+              <div class="swiper-slide">
+                <img src="/public/logo/hubspot.png" alt="hubspot" />
+              </div>
+              <div class="swiper-slide">
+                <img src="/public/logo/notion.png" alt="notion" />
+              </div>
+              <div class="swiper-slide">
+                <img src="/public/logo/netflix.png" alt="netflix" />
+              </div>
+              <div class="swiper-slide">
+                <img src="/public/logo/zoom.png" alt="zoom" />
+              </div>
+            </div>
+          </div>
         </div>
         <div class="logo-types-mobile-carousel">
           <div class="carousel-track">
@@ -1184,6 +1218,17 @@
           nextEl: ".right-arrow",
           prevEl: ".left-arrow",
         },
+      });
+
+      var laptop_logo_swiper = new Swiper(".laptop-logo-swipe", {
+        speed: 5000,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+        slidesPerView: 6,
+        loop: true,
+        spaceBetween: 38,
       });
 
       var r_logo_swiper = new Swiper(".r-logo-swipe", {
