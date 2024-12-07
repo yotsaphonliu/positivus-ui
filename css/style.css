@@ -816,6 +816,35 @@ nav {
       background-color: var(--gray); /* Separator color */
     }
   }
+
+  @media screen and (max-width: 930px) {
+    .case-studies-grid {
+      background-color: transparent;
+
+      display: flex;
+      overflow-y: hidden;
+      gap: 80px;
+
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+
+      .case-studies-item {
+        min-width: 350px;
+        background-color: var(--black);
+        border-radius: 45px;
+
+        padding: 42px 50px;
+      }
+
+      .case-studies-item:not(:last-child)::after {
+        display: none;
+      }
+    }
+
+    .case-studies-grid::-webkit-scrollbar {
+      display: none;
+    }
+  }
 }
 
 .our-working-process {
