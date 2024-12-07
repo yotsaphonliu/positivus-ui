@@ -468,9 +468,12 @@ nav {
     grid-template-columns: 1fr 1fr;
     gap: 40px;
 
+    /* place-self: center; */
+
     .services-grid-item {
+      place-self: center;
       max-height: 310px;
-      max-width: 600px;
+      max-width: 800px;
       background-color: var(--gray);
       border: 1px solid var(--black);
       border-radius: 45px;
@@ -586,9 +589,9 @@ nav {
   @media screen and (max-width: 1300px) {
     .services-grid {
       .services-grid-item {
+        max-height: none;
         flex-direction: column;
         max-width: none;
-        gap: 27px;
 
         .learn-more-btn {
           .learn-more-text {
