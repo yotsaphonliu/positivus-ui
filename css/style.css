@@ -885,8 +885,8 @@ nav {
         }
 
         .expand-btn {
-          height: 58px;
-          width: 58px;
+          min-height: 58px;
+          min-width: 58px;
           border: 1px solid var(--black);
           border-radius: 100%;
           display: flex;
@@ -946,6 +946,99 @@ nav {
         height: auto; /* Adjust to a value large enough for your content */
         opacity: 1;
         padding: 30px 0; /* Restore padding when expanded */
+      }
+    }
+  }
+
+  @media screen and (max-width: 725px) {
+    .our-working-process-grid {
+      margin-top: 30px;
+      gap: 20px;
+
+      .our-working-process-item {
+        padding: 30px;
+        border-radius: 45px;
+
+        .our-working-process-label {
+          .header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+
+            .number {
+              font-size: 30px;
+            }
+            .header-text {
+              font-size: var(--h4-font-size);
+            }
+          }
+
+          .expand-btn {
+            min-height: 30px;
+            min-width: 30px;
+            border: 1px solid var(--black);
+            border-radius: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+
+            .plus-icon,
+            .minus-icon {
+              width: 13px;
+              height: 13px;
+              position: absolute;
+              transition: opacity 0.5s ease, transform 0.5s ease;
+            }
+
+            .plus-icon {
+              opacity: 1;
+              transform: rotate(0deg);
+            }
+
+            .minus-icon {
+              opacity: 0;
+              transform: rotate(-90deg);
+            }
+          }
+        }
+
+        p {
+          transform: translateY(-20px);
+          height: 0;
+          overflow: hidden;
+          opacity: 0;
+          transition: 0.7s ease;
+          padding: 0;
+        }
+      }
+
+      .our-working-process-item.expanded {
+        background-color: var(--lime);
+
+        .our-working-process-label {
+          border-bottom: 1px solid var(--black);
+
+          .expand-btn {
+            .plus-icon {
+              opacity: 0;
+              transform: rotate(90deg);
+            }
+
+            .minus-icon {
+              opacity: 1;
+              transform: rotate(0deg);
+            }
+          }
+        }
+
+        p {
+          transform: translateY(0);
+          height: auto; /* Adjust to a value large enough for your content */
+          opacity: 1;
+          padding: 30px 0; /* Restore padding when expanded */
+        }
       }
     }
   }
