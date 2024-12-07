@@ -1054,6 +1054,9 @@ nav {
     gap: 40px;
 
     .team-item {
+      place-self: center;
+      max-width: 600px;
+      min-height: 350px;
       padding: 40px 35px;
       border: 1px solid var(--black);
       border-radius: 45px;
@@ -1136,6 +1139,93 @@ nav {
       text-decoration: none;
 
       text-align: center;
+    }
+  }
+
+  @media screen and (max-width: 1240px) {
+    .team-grid {
+      padding-top: 40px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    .team-grid {
+      padding-top: 40px;
+      grid-template-columns: 1fr;
+      gap: 40px;
+
+      .team-item {
+        padding: 40px 35px;
+        border: 1px solid var(--black);
+        border-radius: 45px;
+
+        --var-item-gap: 56px;
+        display: flex;
+        flex-direction: column;
+        gap: var(--var-item-gap);
+
+        .person-title {
+          position: relative;
+          display: flex;
+          gap: 20px;
+
+          .flower-container {
+            width: 106px;
+            height: 106px;
+            background-size: 100%;
+            background-image: url("/public/mask/Positivus\ Landing\ Page\ Design\ Vector.svg")
+              none repeat;
+            filter: drop-shadow(6px 6px 0px rgba(0, 0, 0, 1));
+
+            img {
+              mask: url("/public/mask/Positivus\ Landing\ Page\ Design\ Vector.svg");
+              width: 100%;
+              height: 100%;
+            }
+          }
+
+          .person-info {
+            align-self: flex-end;
+          }
+
+          .person-linkedin {
+            position: absolute;
+            right: 0;
+            top: 0;
+            background-color: var(--dark);
+            border-radius: 100%;
+            width: 34px;
+            height: 34px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            svg {
+              fill: var(--lime);
+            }
+          }
+        }
+
+        .person-title:not(:last-child)::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: calc(var(--var-item-gap) / 2 * -1);
+          height: 1px; /* Separator thickness */
+          background-color: var(--black); /* Separator color */
+        }
+      }
+    }
+
+    .all-team-btn {
+      justify-content: center;
+
+      a {
+        min-width: 390px;
+      }
     }
   }
 }
