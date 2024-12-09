@@ -244,6 +244,14 @@ nav {
     }
 
     @media screen and (max-width: 500px) {
+      .hamberger-icon {
+        display: block;
+
+        svg {
+          width: 24px;
+          height: 24px;
+        }
+      }
       .menu {
         width: 300px;
       }
@@ -592,6 +600,7 @@ nav {
         max-height: none;
         flex-direction: column;
         max-width: none;
+        gap: 27px;
 
         .learn-more-btn {
           .learn-more-text {
@@ -665,7 +674,7 @@ nav {
 
           img {
             max-width: 200px;
-            min-width: 165px;
+            min-width: 0;
           }
         }
       }
@@ -741,6 +750,37 @@ nav {
         img {
           width: 100%;
         }
+      }
+    }
+    @media screen and (max-width: 930px) {
+      .case-studies-grid {
+        background-color: transparent;
+        margin-top: 40px;
+        padding: 0;
+        border-radius: 0;
+
+        display: flex;
+        overflow-y: hidden;
+        gap: 80px;
+
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+
+        .case-studies-item {
+          min-width: 350px;
+          background-color: var(--black);
+          border-radius: 45px;
+
+          padding: 42px 50px;
+        }
+
+        .case-studies-item:not(:last-child)::after {
+          display: none;
+        }
+      }
+
+      .case-studies-grid::-webkit-scrollbar {
+        display: none;
       }
     }
   }
@@ -821,6 +861,8 @@ nav {
     .case-studies-grid {
       background-color: transparent;
       margin-top: 40px;
+      padding: 0;
+      border-radius: 0;
 
       display: flex;
       overflow-y: hidden;
@@ -831,6 +873,26 @@ nav {
 
       .case-studies-item {
         min-width: 350px;
+        background-color: var(--black);
+        border-radius: 45px;
+
+        padding: 42px 50px;
+      }
+
+      .case-studies-item:not(:last-child)::after {
+        display: none;
+      }
+    }
+
+    .case-studies-grid::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 390px) {
+    .case-studies-grid {
+      .case-studies-item {
+        min-width: 80vw;
         background-color: var(--black);
         border-radius: 45px;
 
@@ -1216,6 +1278,27 @@ nav {
           bottom: calc(var(--var-item-gap) / 2 * -1);
           height: 1px; /* Separator thickness */
           background-color: var(--black); /* Separator color */
+        }
+      }
+    }
+
+    .all-team-btn {
+      justify-content: center;
+
+      a {
+        min-width: 390px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 430px) {
+    .team-grid {
+      .team-item {
+        .person-title {
+          .flower-container {
+            min-width: 106px;
+            min-height: 106px;
+          }
         }
       }
     }
