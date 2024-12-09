@@ -1137,12 +1137,12 @@ nav {
           width: 106px;
           height: 106px;
           background-size: 100%;
-          background-image: url("/public/mask/Positivus\ Landing\ Page\ Design\ Vector.svg")
+          background-image: url("/asset/mask/Positivus\ Landing\ Page\ Design\ Vector.svg")
             none repeat;
           filter: drop-shadow(6px 6px 0px rgba(0, 0, 0, 1));
 
           img {
-            mask: url("/public/mask/Positivus\ Landing\ Page\ Design\ Vector.svg");
+            mask: url("/asset/mask/Positivus\ Landing\ Page\ Design\ Vector.svg");
             width: 100%;
             height: 100%;
           }
@@ -1237,12 +1237,12 @@ nav {
             width: 106px;
             height: 106px;
             background-size: 100%;
-            background-image: url("/public/mask/Positivus\ Landing\ Page\ Design\ Vector.svg")
+            background-image: url("/asset/mask/Positivus\ Landing\ Page\ Design\ Vector.svg")
               none repeat;
             filter: drop-shadow(6px 6px 0px rgba(0, 0, 0, 1));
 
             img {
-              mask: url("/public/mask/Positivus\ Landing\ Page\ Design\ Vector.svg");
+              mask: url("/asset/mask/Positivus\ Landing\ Page\ Design\ Vector.svg");
               width: 100%;
               height: 100%;
             }
