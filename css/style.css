@@ -1568,6 +1568,17 @@ nav {
       align-items: center;
     }
   }
+
+  @media screen and (max-width: 1075px) {
+    .contact-form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .form-decoration {
+        display: none;
+      }
+    }
+  }
 }
 
 footer {
